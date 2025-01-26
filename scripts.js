@@ -20,3 +20,10 @@ form.addEventListener("submit", (event) => {
     if (isNaN(numDividend) || isNaN(numDivider)) {
       throw new Error("Invalid input: non-numeric values provided.");
     }
+
+     // Check for division by zero
+     if (numDivider === 0) {
+      result.innerText = "Division not performed. Invalid number provided. Try again.";
+      console.error("Error: Division by zero.");
+      return;
+    }
