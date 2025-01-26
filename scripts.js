@@ -27,3 +27,14 @@ form.addEventListener("submit", (event) => {
       console.error("Error: Division by zero.");
       return;
     }
+
+     // Perform division and handle decimal results
+     const divisionResult = numDividend / numDivider;
+     result.innerText = divisionResult % 1 === 0 ? divisionResult : Math.floor(divisionResult);
+   } catch (error) {
+     // Handle unexpected errors
+     console.error("Critical Error:", error);
+     result.innerText = "Something critical went wrong. Please reload the page.";
+     document.body.innerHTML = `<div>Something critical went wrong. Please reload the page.</div>`;
+   }
+ });
