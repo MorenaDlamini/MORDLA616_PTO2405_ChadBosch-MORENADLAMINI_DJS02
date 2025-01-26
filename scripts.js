@@ -12,3 +12,11 @@ form.addEventListener("submit", (event) => {
       result.innerText = "Division not performed. Both values are required in inputs. Try again.";
       return;
     }
+
+    const numDividend = Number(dividend);
+    const numDivider = Number(divider);
+
+    // Validate that inputs are numbers
+    if (isNaN(numDividend) || isNaN(numDivider)) {
+      throw new Error("Invalid input: non-numeric values provided.");
+    }
